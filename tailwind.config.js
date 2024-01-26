@@ -14,11 +14,16 @@ export default {
 fontSize:{
 titre: 'clamp(4rem, 10vw, 20rem); ',
 text: 'clamp(1.25rem, 5vw, 20rem); ',
+soustitre: 'clamp(3rem, 5vw, 20rem); ',
 
 },
-    
-    }
+boxShadow: {
+  customBoxShadow: '10px 10px 0 0 black'
+},
+height: {
+  screenheight: '100svh'
+},
   },
   plugins: []
 }
-
+}
