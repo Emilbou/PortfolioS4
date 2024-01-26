@@ -2,7 +2,7 @@ import type PocketBase from 'pocketbase';
 import type { RecordService } from 'pocketbase';
 
 export enum Collections {
-    TestCollection = "testCollection",
+    Projets = "projets",
 }
 
 // Alias types for improved usability
@@ -20,20 +20,20 @@ export type BaseSystemFields<T = never> = {
     expand?: T;
 };
 
-// Record type for TestCollection
-export type TestCollectionRecord = {
+// Record type for Projets
+export type ProjetsRecord = {
     text?: string;
     image?: string;  // Assuming the image is stored as a string URL
 };
 
-// Response type for TestCollection
-export type TestCollectionResponse<Texpand = unknown> = Required<TestCollectionRecord> & BaseSystemFields<Texpand>;
+// Response type for Projets
+export type ProjetsResponse<Texpand = unknown> = Required<ProjetsRecord> & BaseSystemFields<Texpand>;
 
 // Types containing all Records and Responses
 export type CollectionRecords = {
-    testCollection: TestCollectionRecord;
+    Projets: ProjetsRecord;
 };
 
 export type CollectionResponses = {
-    testCollection: TestCollectionResponse;
+    Projets: ProjetsResponse;
 };
