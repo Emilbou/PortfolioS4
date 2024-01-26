@@ -13,7 +13,8 @@ console.log(finedata);
     <p>{{ ProjetData.LienProjet }}</p>
     <p>{{ ProjetData.ImageProjet }}</p>
     <p>{{ ProjetData.CoverProjet }}</p>
-    <img :src="ProjetData.CoverProjet" alt="Couverture du projet"></img>
+    <p>{{ ProjetData.DescriptionProjet }}</p>
+    <img :src="'http://127.0.0.1:8090/api/files/dnjuizsmj0q2fjv/26wl0qiuy7ol5vf/' + ProjetData.CoverProjet" alt="Couverture du projet" />
     </div>
 
 </template>
