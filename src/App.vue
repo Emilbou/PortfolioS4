@@ -4,9 +4,9 @@ import Header from './components/Header.vue'
 </script>
 
 <template>
-  <div class="p-8">
+  <main class="p-8 bg-blanc">
     <Header />
  
     <RouterView />
-  </div>
+  </main>
 </template>

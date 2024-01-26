@@ -12,7 +12,8 @@ export default {
         },
     extend: {    
 fontSize:{
-titre: 'clamp(4rem, 10vw, 20rem); '
+titre: 'clamp(4rem, 10vw, 20rem); ',
+text: 'clamp(1.25rem, 5vw, 20rem); ',
 
 },
     
