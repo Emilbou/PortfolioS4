@@ -33,9 +33,9 @@
     <div class="flex flex-col mb-10">
         
         <div class="w-full text-center">
-            <h1 class="text-titre">EMILIEN BOUCARD</h1>
+            <h1 class="text-titre">EMILBOU</h1>
         </div>
-        <span class="text-center font-bold">[Scroll Down]</span>
+        <span class="text-center font-bold">[ Scroll Down ]</span>
     </div>
 </div>
 

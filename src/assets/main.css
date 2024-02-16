@@ -10,9 +10,15 @@
   font-family: Veremena;
   src: url(../../public/font/VremenaGroteskMedium.ttf);
 }
+@font-face {
+  font-family: PublicSans;
+  src: url(../../public/font/PublicSans-VariableFont_wght.ttf);
+}
 
 * {
-  font-family: inter;
+  font-family: PublicSans;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 h1 {
