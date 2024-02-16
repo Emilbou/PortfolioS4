@@ -1,11 +1,8 @@
 <script setup>
 import { supabase } from '../supabase'
+const { data: Projet, error } = await supabase.from("Projet").select("*");
+if (error) console.log("n'a pas pu charger la table des projets :", error);
 
-
-const { data: Projet, error } = await supabase
-    .from('Projet')
-    .select('*')
-console.log(Projet)
 </script>
 
  
@@ -46,8 +43,11 @@ console.log(Projet)
     </div>
 </div>
 
-
-
+     <div>
+        <div v-for="projet in Projet" :key="projet.id">
+          <div>{{ projet.nomprojet }}</div>
+        </div>
+      </div>
 </template>
 
 <style>
