@@ -6,5 +6,3 @@ console.log("affiche .env : ",supabaseUrl, supabaseAnonKey);
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-globalThis.supabase = supabase
-

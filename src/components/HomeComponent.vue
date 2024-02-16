@@ -1,7 +1,14 @@
-<script setup lang="ts">
+<script setup>
+import { supabase } from '../supabase'
 
+
+const { data: Projet, error } = await supabase
+    .from('Projet')
+    .select('*')
+console.log(Projet)
 </script>
 
+ 
 <template>
 <div class="h-screenheight flex flex-col justify-between p-5">
     
@@ -38,6 +45,8 @@
         <span class="text-center font-bold">[ Scroll Down ]</span>
     </div>
 </div>
+
+
 
 </template>
 
