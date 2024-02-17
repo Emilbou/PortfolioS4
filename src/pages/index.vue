@@ -1,12 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { supabase } from '../supabase'
 import CardCarrousel from '../components/CardCarrousel.vue';
 import { register } from 'swiper/element/bundle';
+import type { SchemaProjet } from '../types';
 register();
-//const { data: Projet, error } = await supabase
-//    .from('Projet')
-//    .select('*')
-//console.log(Projet)
+const { data: Projet, error } = await supabase
+    .from('Projet')
+    .select('*')
+console.log(Projet)
 
 
 </script>
@@ -15,30 +16,41 @@ register();
 <template>
     <div class="h-screenheight flex flex-col justify-between p-5 ">
 
-     
+ 
 
 
-     <swiper-container :slides-per-view="3"
+
+     <swiper-container 
+    
+        :slides-per-view="3"
         :space-between="20"
         :centered-slides="false"
+        :mousewheel="{
+            enabled: true,
+            releaseOnEdges: true
+        }"
          :autoplay="{
              delay: 2500,
              disableOnInteraction: false,
          }"
         :loop="true"
         :breakpoints="{
-            768: {
-                slidesPerView: 4,
+           0: {
+                slidesPerView: 1,
             },
+            640: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 4,
+            }
         }"
         @swiperprogress="onProgress"
         @swiperslidechange="onSlideChange" class="w-full ">
-          <swiper-slide><CardCarrousel />1</swiper-slide>
-          <swiper-slide><CardCarrousel />2</swiper-slide>
-          <swiper-slide><CardCarrousel />3</swiper-slide>
-          <swiper-slide><CardCarrousel />4</swiper-slide>
-          <swiper-slide><CardCarrousel />5</swiper-slide>
-          <swiper-slide><CardCarrousel />6</swiper-slide>
+          <swiper-slide  v-for="projet in Projet"  :key="projet.id"><CardCarrousel v-bind="projet"/>1</swiper-slide>
 
         </swiper-container>
 
