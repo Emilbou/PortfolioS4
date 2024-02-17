@@ -1,9 +1,11 @@
-<template>
-    
+<script>
 
-                <div class="w-full lg:w-1/4 ">
-                    <figure class="sm:w-full w-1/4  imagetest flex flex-col -mb-5" >
-                    </figure>
-                    <figcaption class="mt-8 text-xl">Lorem test</figcaption>
-                </div>
+</script>
+
+<template>
+
+    <div class="flex-shrink-0 w-full h-fi mr-4 flex-col">
+        <img class="object-cover w-full h-[50svh]" src="../../public/img/place-des-saveurs.png" alt="">
+        <p class="mt-2 text-2xl">Lorem Ipsum</p>
+        </div>
 </template>
