@@ -50,7 +50,7 @@ console.log(Projet)
         }"
         @swiperprogress="onProgress"
         @swiperslidechange="onSlideChange" class="w-full ">
-          <swiper-slide  v-for="projet in Projet"  :key="projet.id"><CardCarrousel v-bind="projet"/>1</swiper-slide>
+          <swiper-slide class="rounded-md overflow-hidden"  v-for="projet in Projet"  :key="projet.id"><CardCarrousel v-bind="projet"/></swiper-slide>
 
         </swiper-container>
 
