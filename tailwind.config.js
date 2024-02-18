@@ -13,6 +13,9 @@ text: 'clamp(1.25rem, 5vw, 20rem); ',
 soustitre: 'clamp(3rem, 5vw, 20rem); ',
 
 },
+transitionProperty: {
+        'width': 'width',
+      },
 boxShadow: {
   customBoxShadow: '10px 10px 0 0 black'
 },

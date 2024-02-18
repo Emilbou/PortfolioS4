@@ -1,16 +1,51 @@
-<script setup lang="ts">
-import { supabase } from '../supabase'
-import CardCarrousel from '../components/CardCarrousel.vue';
-import { register } from 'swiper/element/bundle';
-import type { SchemaProjet } from '../types';
-register();
-const { data: Projet, error } = await supabase
-    .from('Projet')
-    .select('*')
-console.log(Projet)
 
 
-</script>
+
+    <script setup lang="ts">
+    import { supabase } from '../supabase'
+    import CardCarrousel from '../components/CardCarrousel.vue';
+    import { register } from 'swiper/element/bundle';
+    import { gsap } from "gsap/dist/gsap";
+
+    import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+
+    register();
+    const { data: Projet, error } = await supabase
+        .from('Projet')
+        .select('*')
+    console.log(Projet)
+
+    
+    </script>
+
+    <script lang="ts">
+    export default {
+        mounted() {
+              gsap.registerPlugin(ScrollTrigger);
+
+            const timelinetest = gsap.timeline({
+                scrollTrigger: {
+               
+                    start: "+=120svh",
+                    end: "+=90svh",
+                    scrub: false,
+                    markers: true,
+                },
+            })
+
+            timelinetest.to(".card-basis-child", {
+          
+                duration: 1,
+                y: 0,
+            })
+        }
+
+        }
+    
+    </script>
+
+
 
  
 <template>
@@ -69,18 +104,31 @@ console.log(Projet)
         </div>
     </div>
 
-    <div>
-        <div v-for="projet in Projet" :key="projet.id">
-            <div>{{ projet.nomprojet }}</div>
-        </div>
+
+
+
+    <!-- <div>
+        <h1>Supabase</h1>
+        <ul>
+          <li v-for="projets in Projet" :key="projets.id">
+            <RouterLink :to="{ name: 'edit', params: { id: projets.id } }">
+              <div v-bind="projets" >
+                <p>{{ projets.nomprojet }}</p>
+                <p>{{ projets.id }}</p>
+                </div>
+            </RouterLink>
+          </li>
+        </ul>
+      </div> -->
+
+
+    <div class="w-full flex gap-5 p-5" id="card-basis">
+        <div class="card-basis-child w-1/3 h-64 transition-width duration-400 bg-black translate-y-20 hover:w-2/3"></div>
+        <div class="card-basis-child w-1/3 h-64 transition-width duration-400 bg-black translate-y-32 hover:w-2/3"></div>
+        <div class="card-basis-child w-1/3 h-64 transition-width duration-400 bg-black translate-y-44 hover:w-2/3"></div>
     </div>
+
+<div class="mb-[900px]"></div>
+
 </template>
 
-<style>
-.imagetest {
-    background-image: url('/img/place-des-saveurs.png');
-    background-size: cover;
-    background-position: center center;
-    aspect-ratio: 9/10;
-}
-</style>
