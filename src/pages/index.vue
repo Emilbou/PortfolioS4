@@ -2,98 +2,20 @@
 
 
     <script setup lang="ts">
-    import { supabase } from '../supabase'
-    import CardCarrousel from '../components/CardCarrousel.vue';
-    import { register } from 'swiper/element/bundle';
-    import { gsap } from "gsap/dist/gsap";
+ import SwiperHome from '../components/SwiperHome.vue';
+import CardScroll from '../components/CardScroll.vue';
+import FillText from '../components/FillText.vue';
 
-    import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-
-    register();
-    const { data: Projet, error } = await supabase
-        .from('Projet')
-        .select('*')
-    console.log(Projet)
-
-    
     </script>
 
-    <script lang="ts">
-    export default {
-        mounted() {
-              gsap.registerPlugin(ScrollTrigger);
 
-            const timelinetest = gsap.timeline({
-                scrollTrigger: {
-               trigger: "#card-basis",
-                    start: "top bottom",
-                    scrub: false,
-                    markers: true,
-                },
-            })
-
-            timelinetest.to(".card-basis-child", {
-          
-                duration: 1,
-                y: 0,
-            })
-        }
-
-        }
-    
-    </script>
 
 
 
  
 <template>
     <div class="h-screenheight flex flex-col justify-between p-5 ">
-
- 
-
-
-
-     <swiper-container 
-    
-        :slides-per-view="3"
-        :space-between="20"
-        :centered-slides="false"
-        :mousewheel="{
-            enabled: true,
-            releaseOnEdges: true
-        }"
-         :autoplay="{
-             delay: 2500,
-             disableOnInteraction: false,
-         }"
-        :loop="true"
-        :breakpoints="{
-           0: {
-                slidesPerView: 1,
-            },
-            640: {
-                slidesPerView: 2,
-            },
-            992: {
-                slidesPerView: 3,
-            },
-            1200: {
-                slidesPerView: 4,
-            }
-        }"
-        @swiperprogress="onProgress"
-        @swiperslidechange="onSlideChange" class="w-full ">
-          <swiper-slide class="rounded-md overflow-hidden"  v-for="projet in Projet"  :key="projet.id"><CardCarrousel v-bind="projet"/></swiper-slide>
-
-        </swiper-container>
-
-
-
-
-
-
-
+<SwiperHome />
         <div class="flex flex-col ">
 
             <div class="w-full text-center">
@@ -120,13 +42,8 @@
         </ul>
       </div> -->
 
-
-    <div class="w-full flex gap-5 p-5" id="card-basis">
-        <div class="card-basis-child w-full h-64 transition-width duration-400 bg-black translate-y-20 hover:w-2/3"></div>
-        <div class="card-basis-child w-full h-64 transition-width duration-400 bg-black translate-y-32 hover:w-2/3"></div>
-        <div class="card-basis-child w-full h-64 transition-width duration-400 bg-black translate-y-44 hover:w-2/3"></div>
-    </div>
-
+<CardScroll />
+<FillText content="En quête de devenir un développeur créatif, je m'efforce de créer des sites web futuristes et innovants, combinant esthétique et fonctionnalité de manière harmonieuse."/>
 <div class="mb-[900px]"></div>
 
 </template>
