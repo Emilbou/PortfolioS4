@@ -6,7 +6,7 @@ import { Suspense } from 'vue'
 </script>
 
 <template>
-  <main >
+  <main class="bg-[C0DFA1]">
     <suspense>
     <RouterView />
    

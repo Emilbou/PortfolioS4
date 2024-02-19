@@ -8,7 +8,7 @@ export default {
         },
     extend: {    
 fontSize:{
-titre: '10vw ',
+
 text: 'clamp(1.25rem, 5vw, 20rem); ',
 soustitre: 'clamp(3rem, 5vw, 20rem); ',
 
