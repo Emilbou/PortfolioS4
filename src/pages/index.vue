@@ -26,9 +26,8 @@
 
             const timelinetest = gsap.timeline({
                 scrollTrigger: {
-               
-                    start: "+=120svh",
-                    end: "+=90svh",
+               trigger: "#card-basis",
+                    start: "top bottom",
                     scrub: false,
                     markers: true,
                 },
@@ -123,9 +122,9 @@
 
 
     <div class="w-full flex gap-5 p-5" id="card-basis">
-        <div class="card-basis-child w-1/3 h-64 transition-width duration-400 bg-black translate-y-20 hover:w-2/3"></div>
-        <div class="card-basis-child w-1/3 h-64 transition-width duration-400 bg-black translate-y-32 hover:w-2/3"></div>
-        <div class="card-basis-child w-1/3 h-64 transition-width duration-400 bg-black translate-y-44 hover:w-2/3"></div>
+        <div class="card-basis-child w-full h-64 transition-width duration-400 bg-black translate-y-20 hover:w-2/3"></div>
+        <div class="card-basis-child w-full h-64 transition-width duration-400 bg-black translate-y-32 hover:w-2/3"></div>
+        <div class="card-basis-child w-full h-64 transition-width duration-400 bg-black translate-y-44 hover:w-2/3"></div>
     </div>
 
 <div class="mb-[900px]"></div>
