@@ -17,8 +17,8 @@ onMounted(() => {
     const timelinetextline1 = gsap.timeline({
         scrollTrigger: {
             trigger: "#line1",
-            start: "top 60%+=100px",
-            end:"bottom+=500px bottom-=100px",
+            start: "top bottom",
+            end:"bottom+=500px bottom",
             scrub: true,
             markers: true,
         },
