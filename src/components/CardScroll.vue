@@ -12,7 +12,7 @@ export default {
                 trigger: "#card-basis",
                 start: "top bottom",
                 scrub: false,
-                markers: true,
+                markers: false,
             },
         })
 
