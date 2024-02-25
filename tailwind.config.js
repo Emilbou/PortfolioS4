@@ -5,6 +5,7 @@ export default {
  
         fontFamily: {
           sans: ['inter', 'sans-serif'],
+          Veremena: ['Veremena', 'sans-serif'],
         },
     extend: {    
 fontSize:{

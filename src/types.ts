@@ -1,5 +1,10 @@
 export interface SchemaProjet {
-id?: string;
+id?: number;
 nomprojet: string;
 imageprojet: string;
+}
+
+export interface SchemaCounter {
+    id?: string;
+    numberofcount: number;
 }
