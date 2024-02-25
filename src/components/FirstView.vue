@@ -1,9 +1,36 @@
 <script setup lang="ts">
 import Arrow from './Arrow.vue';
+
+</script>
+<script lang="ts">
+
+import { gsap } from "gsap/dist/gsap";
+
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+export default {
+    mounted() {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const scrollfirstpage = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".hauteurpage",
+                start: "top top",
+                end: "bottom-=100px top",
+                scrub: true,
+                markers: false,
+            },
+        })
+
+        scrollfirstpage.to(".actual", {
+rotation: 90,
+        })
+    }
+
+}
 </script>
 
 <template>
-    <div class="h-screenheight w-full overflow-hidden relative p-20">
+    <div class="h-screenheight w-full overflow-hidden relative p-20 hauteurpage">
         <div class="flex flex-col z-10 relative justify-between h-full">
             
             <div class="w-full h-full flex justify-between items-start content-start flex-wrap">
@@ -30,7 +57,7 @@ import Arrow from './Arrow.vue';
                     <p class="w-1/2 text-balance">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae a hic aliquam fugit? Itaque sint animi consequatur! Numquam neque nisi quam recusandae vel, rem fugiat praesentium odit veritatis, aliquid error.
                     Facilis, quos earum ut magnam quod omnis, deserunt maxime esse illo odio commodi veniam architecto hic, laboriosam accusamus tenetur iste aperiam nulla quibusdam adipisci fuga tempora! Nulla, ad. Illo, culpa.</p>
                 </div>
-                <a id="actual" href="#next">
+                <a class="actual " onclick="window.scrollTo({ top: document.getElementById('next').offsetTop, behavior: 'smooth' }); return false;">
 
                     <Arrow class="bg-black p-1 rounded-full aspect-square w-fit h-auto pointer-events-auto"/>
 

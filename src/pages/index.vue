@@ -16,21 +16,23 @@ import FirstView from '../components/FirstView.vue';
 
  
 <template>
-
-<FirstView />
-
-
-
-    <div class="h-screenheight flex flex-col justify-between p-5 ">
-<SwiperHome />
-        <div class="flex flex-col ">
-
-            <div class="w-full text-center">
-                <h1 class="text-[10vw]">EMILBOU</h1>
-            </div>
-            <span class="text-center font-bold text-2xl">[ Scroll Down ]</span>
-        </div>
-    </div>
+<div class="scroll-smooth">
+  
+  <FirstView />
+  
+  
+  
+      <div class="h-screenheight flex flex-col justify-between p-5 scroll-smooth" id="next">
+  <SwiperHome />
+          <div class="flex flex-col ">
+  
+              <div class="w-full text-center">
+                  <h1 class="text-[10vw]">EMILBOU</h1>
+              </div>
+              <span class="text-center font-bold text-2xl">[ Scroll Down ]</span>
+          </div>
+      </div>
+</div>
 
 
 
