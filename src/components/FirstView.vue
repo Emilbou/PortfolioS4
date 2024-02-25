@@ -30,7 +30,7 @@ rotation: 90,
 </script>
 
 <template>
-    <div class="h-screenheight w-full overflow-hidden relative p-20 hauteurpage">
+    <div class="h-screenheight w-full overflow-hidden relative p-10 lg:p-20 hauteurpage">
         <div class="flex flex-col z-10 relative justify-between h-full">
             
             <div class="w-full h-full flex justify-between items-start content-start flex-wrap">
@@ -54,7 +54,7 @@ rotation: 90,
     
                 <div class="w-fit">
                     <h1 class="text-8xl mb-5 ">Emilien Boucard</h1>
-                    <p class="w-1/2 text-balance">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae a hic aliquam fugit? Itaque sint animi consequatur! Numquam neque nisi quam recusandae vel, rem fugiat praesentium odit veritatis, aliquid error.
+                    <p class="lg:w-1/2 w-2/3 text-balance">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae a hic aliquam fugit? Itaque sint animi consequatur! Numquam neque nisi quam recusandae vel, rem fugiat praesentium odit veritatis, aliquid error.
                     Facilis, quos earum ut magnam quod omnis, deserunt maxime esse illo odio commodi veniam architecto hic, laboriosam accusamus tenetur iste aperiam nulla quibusdam adipisci fuga tempora! Nulla, ad. Illo, culpa.</p>
                 </div>
                 <a class="actual " onclick="window.scrollTo({ top: document.getElementById('next').offsetTop, behavior: 'smooth' }); return false;">
