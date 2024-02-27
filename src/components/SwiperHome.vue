@@ -17,10 +17,8 @@ console.log(Projet)
             :slides-per-view="3"
             :space-between="20"
             :centered-slides="false"
-            :mousewheel="{
-                enabled: true,
-                releaseOnEdges: true
-            }"
+            :grab-cursor="true"
+            
              :autoplay="{
                  delay: 2500,
                  disableOnInteraction: false,

@@ -18,7 +18,7 @@ export default {
                 start: "top top",
                 end: "bottom-=100px top",
                 scrub: true,
-                markers: true,
+                markers: false,
                 pinSpacing: true,
                 
             },
@@ -30,7 +30,7 @@ export default {
                 start: "top top",
                 end: "bottom-=100px top",
                 scrub: true,
-                markers: true,
+                markers: false,
                 pinSpacing: true,
                 
             },
@@ -41,7 +41,7 @@ export default {
                 start: "top top",
                 end: "bottom-=100px top",
                 scrub: true,
-                markers: true,
+                markers: false,
                 pinSpacing: true,
                 
             },
@@ -64,7 +64,7 @@ paddingRight: "100px",
 </script>
 
 <template>
-    <div class="absolute top-0 left-0 w-screen h-screenheight reference"></div>
+    <div class="absolute top-0 left-0 w-full h-screenheight reference"></div>
 <div class="w-fit h-fit overflow-hidden  mainpage">
     
         <div class="h-screenheight w-full overflow-hidden relative p-10 lg:p-20 hauteurpage pageactive">

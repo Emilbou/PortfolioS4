@@ -27,27 +27,24 @@ onMounted(() => {
     timelinetextline1.to("#line1", {
        backgroundPosition: "0% 100%",
        ease: "power1.inOut",
-       duration: 10000
+       duration: 100000
     })
 
 
     timelinetextline1.to("#line2", {
        backgroundPosition: "0% 100%",
        ease: "power1.inOut",
-       delay: 10,
-       duration: 10000
+       duration: 100000
     })
     timelinetextline1.to("#line3", {
        backgroundPosition: "0% 100%",
        ease: "power1.inOut",
-       delay: 10,
-       duration: 10000
+       duration: 100000
     })
     timelinetextline1.to("#line4", {
        backgroundPosition: "0% 100%",
        ease: "power1.inOut",
-       delay: 10,
-       duration: 10000
+       duration: 100000
     })
 
 
@@ -59,7 +56,7 @@ onMounted(() => {
 </script>
 <template>
 
-<div class="flex w-full justify-start items-center mt-64 flex-col">
+<div class="flex w-full justify-start items-center mt-64 flex-col" >
     
     <div class="flex justify-start items-start w-1/2 flex-col text-start">
         <p class="text-4xl text-balance  text-titre font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
