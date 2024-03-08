@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import testpocketbase from './components/testpocketbase.vue'
+import FooterPortoflio from './components/FooterPortfolio.vue'
 import { Suspense } from 'vue'
 </script>
 
@@ -9,7 +9,6 @@ import { Suspense } from 'vue'
   <main class="bg-[C0DFA1] ">
     <suspense>
     <RouterView />
-   
  </suspense>
   </main>
 </template>

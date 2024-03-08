@@ -8,6 +8,7 @@ import FillText from '../components/FillText.vue';
 import CountComponent from '../components/CountComponent.vue';
 import PerspectiveCard from '../components/PerspectiveCard.vue';
 import FirstView from '../components/FirstView.vue';
+import FooterPortfolio from '../components/FooterPortfolio.vue';
     </script>
 
 
@@ -62,5 +63,7 @@ import FirstView from '../components/FirstView.vue';
 <PerspectiveCard></PerspectiveCard>
 <div class="mb-[900px]"></div>
 
+
+<FooterPortfolio></FooterPortfolio>
 </template>
 

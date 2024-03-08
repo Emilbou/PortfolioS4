@@ -14,7 +14,7 @@ export default {
         start: "top top",
         end: "bottom-=100px top",
         scrub: true,
-        markers: true,
+        markers: false,
         pinSpacing: true,
 
       },
