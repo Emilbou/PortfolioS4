@@ -1,14 +1,27 @@
 <script setup lang="ts">
-import {ref} from "@vue/reactivity"
-import { supabase } from "@/supabase"
-import CardCarrousel from "@/components/CardCarrousel.vue"
-const basket = ref({})
-defineProps<{
-    id: string;
-}>();
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { supabase } from '@/supabase';
+import CardCarrousel from '@/components/CardCarrousel.vue';
 
+const route = useRoute();
+const projet = ref({});
 
+onMounted(async () => {
+  const { data, error } = await supabase
+    .from('Projet')
+    .select('*')
+    .eq('id', route.params.id)
+    .single();
+
+  if (error) {
+    console.error('Erreur lors de la récupération du projet:', error);
+  } else {
+    projet.value = data;
+  }
+});
 </script>
+
 <template>
-    <CardCarrousel></CardCarrousel>
+  <CardCarrousel v-bind="projet" />
 </template>
