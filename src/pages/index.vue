@@ -21,16 +21,18 @@ export default {
     const timelinefooter = gsap.timeline({
       scrollTrigger: {
         trigger: "#footergsap",
-        start: "center center+=200px",
+        start: "center bottom",
         toggleActions: "play reverse play reverse",
         markers: true,
       },
     });
 
     timelinefooter.to(".footergsapclass", {
+      duration: "0.3",
       width: "95%",
       borderRadius: 50,
       y: "0",
+      paddingBottom: "200px",
     });
   },
 };
@@ -43,7 +45,7 @@ export default {
 <template>
   <div class="w-full flex items-center justify-center overflow-x-hidden">
     
-    <div class="footergsapclass w-full h-full bg-white pb-52">
+    <div class="footergsapclass w-full h-full bg-white pb-80">
     
       <div class="scroll-smooth">
     

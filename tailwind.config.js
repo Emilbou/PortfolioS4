@@ -12,7 +12,7 @@ fontSize:{
 
 text: 'clamp(1.25rem, 5vw, 20rem); ',
 soustitre: 'clamp(3rem, 5vw, 20rem); ',
-
+marquee: 'clamp(10vw,10vw, 20rem); ',
 },
 transitionProperty: {
         'width': 'width',
