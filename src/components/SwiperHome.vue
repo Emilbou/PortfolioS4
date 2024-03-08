@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle';
 import { supabase } from '../supabase'
+import { RouterLink } from 'vue-router';
 import CardCarrousel from '../components/CardCarrousel.vue';
 
 register();
@@ -40,7 +41,17 @@ console.log(Projet)
             }"
             @swiperprogress="onProgress"
             @swiperslidechange="onSlideChange" class="w-full ">
-              <swiper-slide class="rounded-md overflow-hidden"  v-for="projet in Projet"  :key="projet.id"><CardCarrousel v-bind="projet"/></swiper-slide>
+            <RouterLink
+                    v-for="projet in Projet"
+                    :to="{
+                        name: '/projet/[id]',
+                        params: { id:projet.id },
+                    }">
+                
+                  <swiper-slide class="rounded-md overflow-hidden" >
+                    <CardCarrousel v-bind="projet"/>
+                </swiper-slide>
+            </RouterLink>
 
             </swiper-container>
 </template>
