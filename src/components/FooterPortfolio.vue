@@ -1,36 +1,9 @@
-<script lang="ts">
-import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-export default {
-  mounted() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const timelinefooter = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#footergsap",
-        start: "bottom center",
-        toggleActions: "play reverse play reverse",
-        markers: true,
-      },
-    });
-
-    timelinefooter.to(".footergsapclass", {
-      width: "95%",
-      borderRadius: 50,
-      y: "0",
-    });
-  },
-};
-</script>
 
 <template>
   <div class="flex w-full justify-center flex-col items-center">
-    <div
-      id="footergsap"
-      class="w-full bg-white h-[100svh] footergsapclass flex justify-center"
-    ></div>
-    <div class="h-[150svh] flex flex-col bg-black -mt-[100svh] -z-50">
+  
+    <div class="h-[80svh] flex flex-col bg-black  -z-50">
       <div class="text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio commodi
         cupiditate perspiciatis enim consequuntur inventore, quis libero itaque
