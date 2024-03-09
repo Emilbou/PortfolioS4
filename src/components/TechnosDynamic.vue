@@ -1,14 +1,6 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue'
 import { supabase } from '@/supabase'
-
-import type { SchemaProjet } from '../types'
-import { watch } from 'vue'
-
-
-const props = defineProps<SchemaProjet>()
-
-
 const showElement = ref(false)
 const WordpressShow = ref(false)
 const VuejsShow = ref(false)
@@ -16,7 +8,6 @@ const TailwindcssShow = ref(false)
 const HtmlShow = ref(false)
 const CssShow = ref(false)
 
-watch(() => props.id, () => {
 // Est-ce un projet scolaire ?
 supabase
   .from('Projet')
@@ -93,24 +84,11 @@ supabase
       })
     }
   })
-})
 </script>
 
 <template>
-  <div class="bg-white h-auto lg:h-screen">
-    <div class="flex justify-between">
-      <h1>{{ props.nomprojet || 'Nom du projet non défini' }}</h1>
-      <p v-if="showElement === null">Chargement...</p>
-      <p v-else-if="showElement === true">Ceci est un projet réalisé dans le cadre de mes études</p>
-      <p v-else>Projet perso</p>
-    </div>
 
-    <div class="flex">
-      <img class="w-1/2" :src="props.imageprojet" alt="" />
-
-      <div class="flex flex-col">
-        <p>{{ props.descriptionprojet }}</p>
-        
+    
         <div>  
           <p v-if="WordpressShow === null">Chargement...</p>
                 <p v-else-if="WordpressShow === true">avec wordpress</p>
@@ -136,7 +114,4 @@ supabase
                 <p v-else-if="CssShow === true">avec Css</p>
                 <p v-else>pas de Css</p>
         </div>
-      </div>
-    </div>
-  </div>
 </template>
