@@ -7,4 +7,5 @@ export interface SchemaProjet {
   scolaireprojet?: boolean | null;
   technosprojet?: string | null;
   urlprojet?: string | null;
+  descriptionprojet?: string | null;
 }

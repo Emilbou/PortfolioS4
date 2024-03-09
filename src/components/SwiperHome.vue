@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { register } from 'swiper/element/bundle';
 import { supabase } from '../supabase';
 import { useRouter } from 'vue-router';
 import CardCarrousel from '../components/CardCarrousel.vue';
+import { register } from 'swiper/element/bundle';
 
 register();
 const router = useRouter();
