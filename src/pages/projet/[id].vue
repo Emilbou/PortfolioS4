@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, defineProps } from 'vue';
 import { useRoute } from 'vue-router';
 import { supabase } from '@/supabase';
-import CardCarrousel from '@/components/CardCarrousel.vue';
-
+import type { SchemaProjet } from '../../types'
+defineProps<SchemaProjet>()
 const route = useRoute();
 const projet = ref({});
 
@@ -23,5 +23,23 @@ onMounted(async () => {
 </script>
 
 <template>
-  <CardCarrousel v-bind="projet" />
+  <div v-bind="projet">
+  
+  <div>
+<h1>{{ nomprojet }}</h1>
+<img :src="imageprojet" alt="">
+
+
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
 </template>

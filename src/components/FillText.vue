@@ -59,14 +59,14 @@ onMounted(() => {
 <div class="flex w-full justify-start items-center mt-64 flex-col" >
     
     <div class="flex justify-start items-start w-1/2 flex-col text-start">
-        <p class="text-4xl text-balance  text-9xl font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
+        <p class="text-4xl text-balance  text-titre font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;" id="line1">En quête de devenir un développeur créatif,</p>
-        <p class="text-4xl text-balance  text-9xl font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
+        <p class="text-4xl text-balance  text-titre font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;" id="line2">je m'efforce de créer des sites web futuristes</p>
-        <p class="text-4xl text-balance  text-9xl font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
+        <p class="text-4xl text-balance  text-titre font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;" id="line3">
    et innovants, combinant esthétique et </p>
-        <p class="text-4xl text-balance  text-9xl font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
+        <p class="text-4xl text-balance  text-titre font-black" style="background: linear-gradient(90deg,#06041a 50%,rgba(6,4,26,.2) 0); background-position-x: 100%;background-size: 200% 100%;   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;" id="line4">
    fonctionnalité de manière harmonieuse.</p>
 
