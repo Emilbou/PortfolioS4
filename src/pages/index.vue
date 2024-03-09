@@ -58,29 +58,10 @@ export default {
     
           <div class="h-screenheight flex flex-col justify-between p-5 scroll-smooth" >
       <SwiperHome />
-              <div class="flex flex-col ">
-    
-                  <div class="w-full text-center">
-                      <h1 class="text-[10vw]">EMILBOU</h1>
-                  </div>
-                  <span class="text-center font-bold text-2xl">[ Scroll Down ]</span>
-              </div>
+              
           </div>
       </div>
-        <!-- <div>
-            <h1>Supabase</h1>
-            <ul>
-              <li v-for="projets in Projet" :key="projets.id">
-                <RouterLink :to="{ name: 'edit', params: { id: projets.id } }">
-                  <div v-bind="projets" >
-                    <p>{{ projets.nomprojet }}</p>
-                    <p>{{ projets.id }}</p>
-                    </div>
-                </RouterLink>
-              </li>
-            </ul>
-          </div> -->
-    
+
       <CardScroll />
     
     </div>
