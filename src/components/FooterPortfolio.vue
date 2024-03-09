@@ -22,6 +22,7 @@ const copyEmail = () => {
 };
 </script>
 <template>
+  <div class="flex w-full justify-center flex-col items-center overflow-x-hidden  h-[80svh]">
     <div class=" flex flex-col bg-black ">
       <div class="flex whitespace-nowrap">
         <div
