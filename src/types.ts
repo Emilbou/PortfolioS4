@@ -1,10 +1,10 @@
 export interface SchemaProjet {
-id?: number;
-nomprojet: string;
-imageprojet: string;
-}
-
-export interface SchemaCounter {
-    id?: string;
-    numberofcount: number;
+  apercuprojet?: string | null;
+  created_at?: string;
+  id?: number;
+  imageprojet?: string | null;
+  nomprojet?: string | null;
+  scolaireprojet?: boolean | null;
+  technosprojet?: string | null;
+  urlprojet?: string | null;
 }
