@@ -18,7 +18,8 @@ transitionProperty: {
         'width': 'width',
       },
 boxShadow: {
-  customBoxShadow: '10px 10px 0 0 black'
+  customBoxShadow: '10px 10px 0 0 black',
+  customBoxShadowW: '10px 10px 0 0 white'
 },
 height: {
   screenheight: '100svh'

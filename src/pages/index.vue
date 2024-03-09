@@ -43,6 +43,7 @@ export default {
 
  
 <template>
+  <div id="top"></div>
   <div class="w-full flex items-center justify-center overflow-x-hidden">
     
     <div class="footergsapclass w-full h-full bg-white pb-80">
