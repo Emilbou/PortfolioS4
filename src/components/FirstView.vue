@@ -91,10 +91,10 @@ paddingRight: "100px",
     
                     <div class="w-fit">
                         <h1 class="text-8xl mb-5 ">Emilien Boucard</h1>
-                        <p class="lg:w-1/2 w-2/3 text-pretty">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae a hic aliquam fugit? Itaque sint animi consequatur! Numquam neque nisi quam recusandae vel, rem fugiat praesentium odit veritatis, aliquid error.
+                        <p class="lg:w-1/2 w-3/4 text-pretty">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae a hic aliquam fugit? Itaque sint animi consequatur! Numquam neque nisi quam recusandae vel, rem fugiat praesentium odit veritatis, aliquid error.
                         Facilis, quos earum ut magnam quod omnis, deserunt maxime esse illo odio commodi veniam architecto hic, laboriosam accusamus tenetur iste aperiam nulla quibusdam adipisci fuga tempora! Nulla, ad. Illo, culpa.</p>
                     </div>
-                    <a class="actual " onclick="window.scrollTo({ top: document.getElementById('next').offsetTop, behavior: 'smooth' }); return false;">
+                    <a class="actual hidden xl:block" onclick="window.scrollTo({ top: document.getElementById('next').offsetTop, behavior: 'smooth' }); return false;">
     
                         <Arrow class="bg-black p-1 rounded-full aspect-square w-fit h-auto pointer-events-auto"/>
     
