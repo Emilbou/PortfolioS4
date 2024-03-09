@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { supabase } from '@/supabase';
-import CardCarrousel from '@/components/CardCarrousel.vue';
+import DynamicData from '@/components/DynamicData.vue';
 
 const route = useRoute();
 const projet = ref({});
@@ -23,5 +23,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <CardCarrousel v-bind="projet" />
+  <DynamicData v-bind="projet" />
 </template>
