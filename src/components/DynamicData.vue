@@ -9,6 +9,9 @@ const props = defineProps<SchemaProjet>()
 const showElement = ref(false)
 const WordpressShow = ref(false)
 const VuejsShow = ref(false)
+const TailwindcssShow = ref(false)
+const HtmlShow = ref(false)
+const CssShow = ref(false)
 
 // Est-ce un projet scolaire ?
 supabase
@@ -50,6 +53,42 @@ supabase
       })
     }
   })
+  supabase
+  .from('Projet')
+  .select('Tailwindcss')
+  .then(({ data }) => {
+    if (data) {
+      TailwindcssShow.value = false 
+      data.forEach(row => {
+        TailwindcssShow.value = row.Tailwindcss?? false
+        console.log(`ID ${row.id} : TailwindcssShow = ${TailwindcssShow.value}`)
+      })
+    }
+  })
+  supabase
+  .from('Projet')
+  .select('Html')
+  .then(({ data }) => {
+    if (data) {
+      HtmlShow.value = false 
+      data.forEach(row => {
+        HtmlShow.value = row.Html?? false
+        console.log(`ID ${row.id} : HtmlShow = ${HtmlShow.value}`)
+      })
+    }
+  })
+  supabase
+  .from('Projet')
+  .select('Css')
+  .then(({ data }) => {
+    if (data) {
+      CssShow.value = false 
+      data.forEach(row => {
+        CssShow.value = row.Css?? false
+        console.log(`ID ${row.id} : CssShow = ${CssShow.value}`)
+      })
+    }
+  })
 </script>
 
 <template>
@@ -76,6 +115,21 @@ supabase
           <p v-if="VuejsShow === null">Chargement...</p>
                 <p v-else-if="VuejsShow === true">avec Vuejs</p>
                 <p v-else>pas de Vuejs</p>
+        </div>
+        <div>  
+          <p v-if="TailwindcssShow === null">Chargement...</p>
+                <p v-else-if="TailwindcssShow === true">avec Tailwindcss</p>
+                <p v-else>pas de Tailwindcss</p>
+        </div>
+        <div>  
+          <p v-if="HtmlShow === null">Chargement...</p>
+                <p v-else-if="HtmlShow === true">avec Html</p>
+                <p v-else>pas de Html</p>
+        </div>
+        <div>  
+          <p v-if="CssShow === null">Chargement...</p>
+                <p v-else-if="CssShow === true">avec Css</p>
+                <p v-else>pas de Css</p>
         </div>
       </div>
     </div>
