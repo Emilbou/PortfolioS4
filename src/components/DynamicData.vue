@@ -52,10 +52,10 @@ watch(() => props.id, fetchProjectData, { immediate: true })
       <div class="hidden" v-else></div class="hidden">
     </div>
 
-    <div class="flex">
-      <img class=" aspect-square object-cover hauteurimage"  :src="props.imageprojet" alt="" />
+    <div class="flex flex-col xl:flex-row">
+      <img class="  object-cover hauteurimage"  :src="props.imageprojet" alt="" />
 
-      <div class="flex flex-col h-[80vh] w-full justify-between pl-10">
+      <div class="flex flex-col h-[80vh] w-full justify-start xl:pl-10 mt-10 xl:mt-0">
         <div>
 <div class="flex flex-col pb-10">
   
@@ -101,7 +101,7 @@ watch(() => props.id, fetchProjectData, { immediate: true })
 <!-- url du projet si il y en a une  -->
 
 <div v-if="Urlprojet !== null" class="flex justify-center items-center">
-  <div class="border text-center w-fit  px-10 py-2 bg-black rounded-full ">
+  <div class="border text-center w-fit  mt-28 px-10 py-2 bg-black rounded-full ">
   
   <a :href="urlprojet" target="_blank" class="text-center text-4xl font-normal text-white">{{nomprojet}}</a>
 </div>
@@ -116,9 +116,19 @@ watch(() => props.id, fetchProjectData, { immediate: true })
 
 
 <style>
+@media (max-width: 1024px){
+  .hauteurimage
+  {
+    height: 80vh;
+    aspect-ratio: 12/9;
+  }
+  
+}
 .hauteurimage
 {
   height: 80vh;
-  aspect-ratio: 12/9;
+  aspect-ratio: 1/1;
 }
+
+
 </style>
