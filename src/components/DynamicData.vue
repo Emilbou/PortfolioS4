@@ -45,60 +45,69 @@ watch(() => props.id, fetchProjectData, { immediate: true })
 
 <template>
   <div class="bg-white h-auto lg:h-screen p-10">
-    <div class="flex gap-16">
+    <div class="flex gap-16 justify-start items-start">
       <h1 class="text-5xl pb-10">{{ props.nomprojet || 'Nom du projet non défini' }}</h1>
       <p v-if="showElement === null">Chargement...</p>
-      <div v-else-if="showElement === true">Ceci est un projet réalisé dans le cadre de mes études <SchoolIcon /></div>
+      <div v-else-if="showElement === true"><SchoolIcon class="w-16"/></div>
       <div class="hidden" v-else></div class="hidden">
     </div>
 
     <div class="flex">
       <img class=" aspect-square object-cover hauteurimage"  :src="props.imageprojet" alt="" />
 
-      <div class="flex flex-col">
-<div class="flex flex-col">
-  <h2 class="text-3xl">Description</h2>
-          <p>{{ props.descriptionprojet }}</p>
+      <div class="flex flex-col h-[80vh] w-full justify-between pl-10">
+        <div>
+<div class="flex flex-col pb-10">
+  
+  <h2 class="text-3xl pb-5">Description</h2>
+          <p class="text-pretty">{{ props.descriptionprojet }}</p>
   
 </div>
-        <p>technos utilisées</p>
-      <div class="flex w-full gap-5">
-        
-       
-          <p v-if="WordpressShow === null">Chargement...</p>
-                <div v-else-if="WordpressShow === true"><img class="w-10 " src="/img/iconestechnos/WordpressIcon.webp" alt=""></div>
-        
-       
-          <p v-if="VuejsShow === null">Chargement...</p>
-                <p v-else-if="VuejsShow === true"><img class="w-10 " src="/img/iconestechnos/VuejsIcon.webp" alt=""> </p>
-      
-       
-          <p v-if="TailwindcssShow === null">Chargement...</p>
-                <p v-else-if="TailwindcssShow === true"><img class="w-10 " src="/img/iconestechnos/TailwindIcon.webp" alt=""> </p>
-    
-       
-          <p v-if="HtmlShow === null">Chargement...</p>
-                <p v-else-if="HtmlShow === true"><img class="w-10 " src="/img/iconestechnos/HtmlIcon.webp" alt=""> </p>
-     
-       
-          <p v-if="CssShow === null">Chargement...</p>
-                <p v-else-if="CssShow === true"><img class="w-10 " src="/img/iconestechnos/CssIcon.webp" alt=""> </p>
-   
+<div class="pb-10">
+  
+          <h2 class="text-3xl pb-5">Outils de développement</h2>
+        <div class="flex w-full gap-5 flex-wrap">
+  
+  
+            <p v-if="WordpressShow === null">Chargement...</p>
+                  <div v-else-if="WordpressShow === true"><img class="w-10 " src="/img/iconestechnos/WordpressIcon.webp" alt=""></div>
+  
+  
+            <p v-if="VuejsShow === null">Chargement...</p>
+                  <p v-else-if="VuejsShow === true"><img class="w-10 " src="/img/iconestechnos/VuejsIcon.webp" alt=""> </p>
+  
+  
+            <p v-if="TailwindcssShow === null">Chargement...</p>
+                  <p v-else-if="TailwindcssShow === true"><img class="w-10 " src="/img/iconestechnos/TailwindIcon.webp" alt=""> </p>
+  
+  
+            <p v-if="HtmlShow === null">Chargement...</p>
+                  <p v-else-if="HtmlShow === true"><img class="w-10 " src="/img/iconestechnos/HtmlIcon.webp" alt=""> </p>
+  
+  
+            <p v-if="CssShow === null">Chargement...</p>
+                  <p v-else-if="CssShow === true"><img class="w-10 " src="/img/iconestechnos/CssIcon.webp" alt=""> </p>
+  
+</div>
         
       </div>
 
 <!-- projet de groupe ou solo -->
 <div v-if="Groupe === null">Chargement</div>
-<div v-else-if="Groupe === true">Projet réalisé en groupe </div>
-<div v-else="Groupe">Projet solo</div>
+<div v-else-if="Groupe === true" class="text-3xl">Projet réalisé en groupe </div>
+<div v-else="Groupe"></div>
 
+</div>
 <!-- url du projet si il y en a une  -->
 
-<div v-if="Urlprojet !== null">
-<a :href="urlprojet">l'url en question</a>
+<div v-if="Urlprojet !== null" class="flex justify-center items-center">
+  <div class="border text-center w-fit  px-10 py-2 bg-black rounded-full ">
+  
+  <a :href="urlprojet" target="_blank" class="text-center text-4xl font-normal text-white">{{nomprojet}}</a>
+</div>
 </div>
 
-      </div>
+    </div>
     </div>
   </div>
 
