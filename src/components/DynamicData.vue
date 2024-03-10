@@ -14,6 +14,7 @@ const TailwindcssShow = ref(false)
 const HtmlShow = ref(false)
 const CssShow = ref(false)
 const Groupe = ref(false)
+const Urlprojet = ref(null)
 
 const fetchProjectData = async () => {
   const { data: projectData } = await supabase
@@ -30,6 +31,7 @@ const fetchProjectData = async () => {
     HtmlShow.value = projectData.Html ?? false
     CssShow.value = projectData.Css ?? false
     Groupe.value = projectData.groupeprojet?? false
+    Urlprojet.value = projectData.urlprojet?? null
   }
 }
 
@@ -87,7 +89,11 @@ watch(() => props.id, fetchProjectData, { immediate: true })
 <div v-else="Groupe">Projet solo</div>
 
 <!-- url du projet si il y en a une  -->
+
+<div v-if="Urlprojet !== null">
 <a :href="urlprojet">l'url en question</a>
+</div>
+
       </div>
     </div>
   </div>
