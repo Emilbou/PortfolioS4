@@ -5,7 +5,7 @@
  import SwiperHome from '../components/SwiperHome.vue';
 import CardScroll from '../components/CardScroll.vue';
 import FillText from '../components/FillText.vue';
-
+import CardCarrousel from '../components/CardCarrousel.vue';
 import FirstView from '../components/FirstView.vue';
 import FooterPortfolio from '../components/FooterPortfolio.vue';
     </script>
@@ -42,6 +42,8 @@ export default {
 
  
 <template>
+
+
   <div id="top"></div>
   <div class="w-full flex items-center justify-center overflow-x-hidden">
     
@@ -54,7 +56,7 @@ export default {
         
               <div class="h-screenheight flex flex-col  p-5 scroll-smooth mt-32" >
                   
-                <h2 class="text-5xl mb-32">Projets </h2>
+                <h2 class="text-5xl mb-32 font-black">Projets </h2>
                 <SwiperHome />
               </div>
       <FillText class="h-screen" content="En quête de devenir un développeur créatif, je m'efforce de créer des sites web futuristes et innovants, combinant esthétique et fonctionnalité de manière harmonieuse."/>
