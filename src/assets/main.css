@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: Veremena;
-  src: url(../../public/font/VremenaGroteskMedium.ttf);
+  src: url(/font/VremenaGroteskMedium.ttf);
 }
 @font-face {
   font-family: PublicSans;
-  src: url(../../public/font/PublicSans-VariableFont_wght.ttf);
+  src: url(/font/PublicSans-VariableFont_wght.ttf);
 }
 
 * {

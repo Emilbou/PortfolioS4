@@ -50,41 +50,44 @@ watch(() => props.id, fetchProjectData, { immediate: true })
 
       <div class="flex flex-col">
         <p>{{ props.descriptionprojet }}</p>
+        <p>technos utilisées</p>
       <div class="flex w-full justify-between">
         
-        <div>
+       
           <p v-if="WordpressShow === null">Chargement...</p>
                 <div v-else-if="WordpressShow === true"><img class="w-10 asp" src="/img/iconestechnos/WordpressIcon.webp" alt=""></div>
                 <div v-else class="hidden"></div>
-        </div>
-        <div>
+        
+       
           <p v-if="VuejsShow === null">Chargement...</p>
                 <p v-else-if="VuejsShow === true"><img class="w-10 asp" src="/img/iconestechnos/VuejsIcon.webp" alt=""> </p>
                 <div v-else class="hidden"></div>
-        </div>
-        <div>
+      
+       
           <p v-if="TailwindcssShow === null">Chargement...</p>
                 <p v-else-if="TailwindcssShow === true"><img class="w-10 asp" src="/img/iconestechnos/TailwindIcon.webp" alt=""> </p>
                 <div v-else class="hidden"></div>
-        </div>
-        <div>
+    
+       
           <p v-if="HtmlShow === null">Chargement...</p>
                 <p v-else-if="HtmlShow === true"><img class="w-10 asp" src="/img/iconestechnos/HtmlIcon.webp" alt=""> </p>
                 <div v-else class="hidden"></div>
-        </div>
-        <div>
+     
+       
           <p v-if="CssShow === null">Chargement...</p>
                 <p v-else-if="CssShow === true"><img class="w-10 asp" src="/img/iconestechnos/CssIcon.webp" alt=""> </p>
                 <div v-else class="hidden"></div>
-        </div>
+   
         
       </div>
 
-
+<!-- projet de groupe ou solo -->
 <div v-if="Groupe === null">Chargement</div>
 <div v-else-if="Groupe === true">Projet réalisé en groupe</div>
 <div v-else="Groupe">Projet solo</div>
 
+<!-- url du projet si il y en a une  -->
+<a :href="urlprojet">l'url en question</a>
       </div>
     </div>
   </div>
