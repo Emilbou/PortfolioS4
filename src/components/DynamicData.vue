@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue'
 import { supabase } from '@/supabase'
-
-import type { SchemaProjet } from '../types'
 import { watch } from 'vue'
 
+import type { SchemaProjet } from '../types'
 
 const props = defineProps<SchemaProjet>()
-
 
 const showElement = ref(false)
 const WordpressShow = ref(false)
@@ -16,84 +14,24 @@ const TailwindcssShow = ref(false)
 const HtmlShow = ref(false)
 const CssShow = ref(false)
 
-watch(() => props.id, () => {
-// Est-ce un projet scolaire ?
-supabase
-  .from('Projet')
-  .select('scolaireprojet')
-  .then(({ data }) => {
-    if (data) {
-      showElement.value = false 
-      data.forEach(row => {
-        showElement.value = row.scolaireprojet ?? false
-        console.log(`ID ${row.id} : showElement = ${showElement.value}`)
-      })
-    }
-  })
-  .catch(console.error)
+const fetchProjectData = async () => {
+  const { data: projectData } = await supabase
+    .from('Projet')
+    .select('*')
+    .eq('id', props.id)
+    .single()
 
-  // Quelles technos ?
-  supabase
-  .from('Projet')
-  .select('Wordpress')
-  .then(({ data }) => {
-    if (data) {
-      WordpressShow.value = false 
-      data.forEach(row => {
-        WordpressShow.value = row.Wordpress?? false
-        console.log(`ID ${row.id} : WordpressShow = ${WordpressShow.value}`)
-      })
-    }
-  })
-  supabase
-  .from('Projet')
-  .select('Vuejs')
-  .then(({ data }) => {
-    if (data) {
-      VuejsShow.value = false 
-      data.forEach(row => {
-        VuejsShow.value = row.Vuejs?? false
-        console.log(`ID ${row.id} : VuejsShow = ${VuejsShow.value}`)
-      })
-    }
-  })
-  supabase
-  .from('Projet')
-  .select('Tailwindcss')
-  .then(({ data }) => {
-    if (data) {
-      TailwindcssShow.value = false 
-      data.forEach(row => {
-        TailwindcssShow.value = row.Tailwindcss?? false
-        console.log(`ID ${row.id} : TailwindcssShow = ${TailwindcssShow.value}`)
-      })
-    }
-  })
-  supabase
-  .from('Projet')
-  .select('Html')
-  .then(({ data }) => {
-    if (data) {
-      HtmlShow.value = false 
-      data.forEach(row => {
-        HtmlShow.value = row.Html?? false
-        console.log(`ID ${row.id} : HtmlShow = ${HtmlShow.value}`)
-      })
-    }
-  })
-  supabase
-  .from('Projet')
-  .select('Css')
-  .then(({ data }) => {
-    if (data) {
-      CssShow.value = false 
-      data.forEach(row => {
-        CssShow.value = row.Css?? false
-        console.log(`ID ${row.id} : CssShow = ${CssShow.value}`)
-      })
-    }
-  })
-})
+  if (projectData) {
+    showElement.value = projectData.scolaireprojet ?? false
+    WordpressShow.value = projectData.Wordpress ?? false
+    VuejsShow.value = projectData.Vuejs ?? false
+    TailwindcssShow.value = projectData.Tailwindcss ?? false
+    HtmlShow.value = projectData.Html ?? false
+    CssShow.value = projectData.Css ?? false
+  }
+}
+
+watch(() => props.id, fetchProjectData, { immediate: true })
 </script>
 
 <template>
@@ -113,8 +51,8 @@ supabase
         
         <div>  
           <p v-if="WordpressShow === null">Chargement...</p>
-                <p v-else-if="WordpressShow === true">avec wordpress</p>
-                <p v-else>pas de wordpress</p>
+                <div v-else-if="WordpressShow === true"><img class="w-10 asp" src="../../public/img/iconestechnos/WordpressIcon.webp" alt=""></div>
+                <div v-else class="hidden"></div>
         </div>
         <div>  
           <p v-if="VuejsShow === null">Chargement...</p>
@@ -140,3 +78,4 @@ supabase
     </div>
   </div>
 </template>
+
