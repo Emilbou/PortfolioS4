@@ -1,5 +1,5 @@
 export interface SchemaProjet {
-  apercuprojet?: string | null;
+  apercuprojet?: JSON | null;
   created_at?: string;
   id?: number;
   imageprojet?: string | null;

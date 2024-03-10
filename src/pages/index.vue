@@ -23,7 +23,7 @@ export default {
         trigger: "#footergsap",
         start: "center+=200px bottom",
         toggleActions: "play reverse play reverse",
-        markers: true,
+        markers: false,
       },
     });
 

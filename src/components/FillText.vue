@@ -20,7 +20,7 @@ onMounted(() => {
             start: "top bottom",
             end:"bottom+=500px bottom",
             scrub: true,
-            markers: true,
+            markers: false,
         },
     })
 
