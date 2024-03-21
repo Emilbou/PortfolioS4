@@ -65,7 +65,7 @@ paddingRight: "100px",
 
 <template>
     <div class="absolute top-0 left-0 w-full h-screenheight reference"></div>
-<div class="w-fit h-fit overflow-hidden  mainpage">
+<div class="w-100% h-fit overflow-hidden  mainpage">
     
         <div class="h-screenheight w-full overflow-hidden relative p-10 lg:p-20 hauteurpage pageactive">
             <div class="flex flex-col z-10 relative justify-between h-full">
@@ -91,8 +91,7 @@ paddingRight: "100px",
     
                     <div class="w-fit">
                         <h1 class="text-8xl mb-5 ">Emilien Boucard</h1>
-                        <p class="lg:w-1/2 w-3/4 text-pretty">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae a hic aliquam fugit? Itaque sint animi consequatur! Numquam neque nisi quam recusandae vel, rem fugiat praesentium odit veritatis, aliquid error.
-                        Facilis, quos earum ut magnam quod omnis, deserunt maxime esse illo odio commodi veniam architecto hic, laboriosam accusamus tenetur iste aperiam nulla quibusdam adipisci fuga tempora! Nulla, ad. Illo, culpa.</p>
+                        
                     </div>
                     <a class="actual hidden xl:block" onclick="window.scrollTo({ top: document.getElementById('next').offsetTop, behavior: 'smooth' }); return false;">
     

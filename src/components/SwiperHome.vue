@@ -30,12 +30,15 @@ const handleSlideClick = (projet) => {
         slidesPerView: 1,
       },
       640: {
-        slidesPerView: 2,
+        slidesPerView: 1,
       },
       992: {
-        slidesPerView: 3,
+        slidesPerView: 2,
       },
       1200: {
+        slidesPerView: 3,
+      },
+      1600: {
         slidesPerView: 4,
       },
     }"
