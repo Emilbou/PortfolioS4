@@ -54,14 +54,14 @@ export default {
       <FirstView />
       <div  id="next"></div>
         
-              <div class="h-screenheight flex flex-col  p-5 scroll-smooth mt-32" >
+              <div class="h-screenheight flex flex-col  p-5 scroll-smooth " >
                   
                 <h2 class="text-5xl mb-32 font-black"> Mes Projets </h2>
                 <SwiperHome />
                 <div class="w-full justify-end">
 <RouterLink to="/projets">
   
-                    Voir tout les projets
+                    Voir tous les projets
   
 </RouterLink>
                 </div>
