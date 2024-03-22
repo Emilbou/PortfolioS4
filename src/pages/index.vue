@@ -20,9 +20,9 @@ export default {
       scrollTrigger: {
         trigger: "#footergsap",
         end: "bottom",
-        start: "center+=200px bottom",
+        start: "top+=200px bottom",
         toggleActions: "play reverse play reverse",
-        markers: true,
+        markers: false,
       },
     });
 
@@ -58,6 +58,13 @@ export default {
                   
                 <h2 class="text-5xl mb-32 font-black"> Mes Projets </h2>
                 <SwiperHome />
+                <div class="w-full justify-end">
+<RouterLink to="/projets">
+  
+                    Voir tout les projets
+  
+</RouterLink>
+                </div>
               </div>
               
               
@@ -96,8 +103,7 @@ export default {
     
     </div>
   </div>
-  <div id="footergsap"></div>
-<FooterPortfolio></FooterPortfolio>
+<FooterPortfolio id="footergsap"></FooterPortfolio>
 </template>
 
 <style>

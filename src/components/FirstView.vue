@@ -14,24 +14,24 @@ export default {
         const scrollfirstpage1 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".reference",
-                pin:true,
+                pin:false,
                 start: "top top",
                 end: "bottom-=100px top",
                 scrub: true,
                 markers: false,
-                pinSpacing: true,
+                pinSpacing: false,
                 
             },
         })
         const scrollfirstpage2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".reference",
-                pin:true,
+                pin:false,
                 start: "top top",
                 end: "bottom-=100px top",
                 scrub: true,
                 markers: false,
-                pinSpacing: true,
+                pinSpacing: false,
                 
             },
         })
@@ -54,7 +54,8 @@ rotation: 90,
         })
         scrollfirstpage3.to(".mainpage", {
 paddingLeft: "100px",       
-paddingRight: "100px",       
+paddingRight: "100px", 
+paddingBottom: "200px",      
         })
 
  
