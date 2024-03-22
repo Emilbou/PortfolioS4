@@ -66,13 +66,22 @@ export default {
               
               <h2 class="text-5xl mb-12 font-black"> Qui suis-je ? </h2>
               
-                <div >
+                <div class="flex flex-row w-full justify-evenly">
+                  <div class="flex w-full justify-around">
                 <div class="w-full md:w-1/2 xl:w-1/3 flex justify-center my-24  relative">
                   <div class="absolute w-44 aspect-square bg-red-600 rounded-full -top-12 -right-5 "></div>
                   <div class="absolute w-64 aspect-square bg-red-600 rounded-full -bottom-12 -left-5 "></div>
               
-                  <img class="w-4/5 rounded-xl max-w-96 z-20" src="/img/about/MoiContentPhotoPeter.jpg" alt="">
+                  <img class="w-full rounded-xl max-w-96 z-20" src="/img/about/MoiContentPhotoPeter.jpg" alt="">
                 </div>
+                <p class="w-1/2 flex flex-col justify-center"><span class="text-6xl mb-2 font-bold">Emilien Boucard</span>
+
+<span class="text-3xl text-pretty mb-6">Étudiant en MMI, Développeur Web Frontend Passionné</span>
+
+<span>Étudiant en Métiers du Multimédia et de l'Internet, je suis un développeur web frontend utilisant principalement Vue.js, TailwindCSS et Supabase. Féru de technologies web modernes, je crée des interfaces riches et interactives, animé par la passion des expériences utilisateur esthétiques et performantes. Curieux et avide d'apprendre, je suis constamment en veille sur les dernières innovations du secteur.</span></p>
+                </div>
+
+                
             </div>
             </div>
 
