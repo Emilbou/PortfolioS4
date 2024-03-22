@@ -19,9 +19,10 @@ export default {
     const timelinefooter = gsap.timeline({
       scrollTrigger: {
         trigger: "#footergsap",
+        end: "after",
         start: "center+=200px bottom",
         toggleActions: "play reverse play reverse",
-        markers: false,
+        markers: true,
       },
     });
 
