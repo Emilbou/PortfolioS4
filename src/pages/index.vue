@@ -54,8 +54,8 @@ export default {
         <div>
           <h2 class="text-5xl mb-12 font-black">Qui suis-je ?</h2>
 
-          <div class="flex flex-row w-full justify-evenly">
-            <div class="flex w-full justify-around">
+          <div class="flex flex-col w-full justify-evenly">
+            <div class="flex w-full flex-col lg:flex-row justify-around">
               <div class="w-full md:w-1/2 xl:w-1/3 flex justify-center my-24 relative">
                 <div
                   class="absolute w-44 aspect-square bg-red-600 rounded-full -top-12 -right-5"
@@ -70,7 +70,7 @@ export default {
                   alt=""
                 />
               </div>
-              <p class="w-1/2 flex flex-col justify-center">
+              <p class="w-full lg:w-1/2 flex flex-col justify-center">
                 <span class="text-6xl mb-2 font-bold">Emilien Boucard</span>
 
                 <span class="text-3xl text-pretty mb-6"
