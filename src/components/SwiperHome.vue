@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { supabase } from '../supabase';
-import { useRouter } from 'vue-router';
-import CardCarrousel from '../components/CardCarrousel.vue';
-import { register } from 'swiper/element/bundle';
+import { supabase } from '../supabase'
+import { useRouter } from 'vue-router'
+import CardCarrousel from '../components/CardCarrousel.vue'
+import { register } from 'swiper/element/bundle'
+import Id from '../pages/projet/[id].vue'
 
-register();
-const router = useRouter();
-const { data: Projet, error } = await supabase.from('Projet').select('*');
-console.log(Projet);
+register()
+const router = useRouter()
+const { data: Projet, error } = await supabase.from('Projet').select('*')
+console.log(Projet)
 
 const handleSlideClick = (projet) => {
-  router.push({ name: '/projet/[id]', params: { id: projet.id } });
-};
+  router.push({ name: '/projet/[id]', params: { id: projet.id } })
+}
 </script>
 
 <template>
@@ -22,25 +23,25 @@ const handleSlideClick = (projet) => {
     :grab-cursor="true"
     :autoplay="{
       delay: 2500,
-      disableOnInteraction: false,
+      disableOnInteraction: false
     }"
     :loop="true"
     :breakpoints="{
       0: {
-        slidesPerView: 1,
+        slidesPerView: 1
       },
       640: {
-        slidesPerView: 1,
+        slidesPerView: 1
       },
       992: {
-        slidesPerView: 2,
+        slidesPerView: 2
       },
       1200: {
-        slidesPerView: 3,
+        slidesPerView: 3
       },
       1600: {
-        slidesPerView: 4,
-      },
+        slidesPerView: 4
+      }
     }"
     @swiperprogress="onProgress"
     @swiperslidechange="onSlideChange"
@@ -52,7 +53,7 @@ const handleSlideClick = (projet) => {
       class="rounded-md overflow-hidden cursor-pointer"
       @click="handleSlideClick(projet)"
     >
-      <CardCarrousel v-bind="projet" />
+      <CardCarrousel :id_-projet="projet.id" />
     </swiper-slide>
   </swiper-container>
 </template>
