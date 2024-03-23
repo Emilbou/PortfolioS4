@@ -23,5 +23,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <DynamicData v-bind="projet" />
+  <DynamicData :id_Projetprops="route.params.id" />
 </template>

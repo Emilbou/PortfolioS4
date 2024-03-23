@@ -63,6 +63,57 @@ export type Database = {
         }
         Relationships: []
       }
+      Technos: {
+        Row: {
+          icone_techno: string | null
+          id: number
+          nom_techno: string | null
+        }
+        Insert: {
+          icone_techno?: string | null
+          id?: number
+          nom_techno?: string | null
+        }
+        Update: {
+          icone_techno?: string | null
+          id?: number
+          nom_techno?: string | null
+        }
+        Relationships: []
+      }
+      TechnosProjets: {
+        Row: {
+          id: number
+          id_Projet: number | null
+          id_Techno: number | null
+        }
+        Insert: {
+          id?: number
+          id_Projet?: number | null
+          id_Techno?: number | null
+        }
+        Update: {
+          id?: number
+          id_Projet?: number | null
+          id_Techno?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_TechnosProjets_id_Projet_fkey"
+            columns: ["id_Projet"]
+            isOneToOne: false
+            referencedRelation: "Projet"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "public_TechnosProjets_id_Techno_fkey"
+            columns: ["id_Techno"]
+            isOneToOne: false
+            referencedRelation: "Technos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
