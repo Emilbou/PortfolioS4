@@ -77,7 +77,7 @@ export default {
                   >Étudiant en MMI, Développeur Web Frontend Passionné</span
                 >
 
-                <span
+                <span class="text-pretty"
                   >Étudiant en Métiers du Multimédia et de l'Internet, je suis un développeur web
                   frontend utilisant principalement Vue.js, TailwindCSS et Supabase. Féru de
                   technologies web modernes, je crée des interfaces riches et interactives, animé
@@ -92,6 +92,8 @@ export default {
       </div>
 
       <CardScroll />
+
+      <div></div>
     </div>
   </div>
   <FooterPortfolio id="footergsap"></FooterPortfolio>
