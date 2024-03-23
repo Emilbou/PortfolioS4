@@ -3,9 +3,7 @@ import { defineProps, ref } from 'vue'
 import { supabase } from '@/supabase'
 import { watch } from 'vue'
 import SchoolIcon from '../components/SchoolIcon.vue'
-import type { SchemaProjet } from '../types'
 
-const props = defineProps<SchemaProjet>()
 
 const showElement = ref(false)
 const WordpressShow = ref(false)

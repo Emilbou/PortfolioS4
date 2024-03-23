@@ -52,7 +52,7 @@ export default {
       </div>
       <div class="px-5 flex flex-col">
         <div>
-          <h2 class="text-5xl mb-12 font-black">Qui suis-je ?</h2>
+          <h2 class="text-5xl mb-12 font-black">A propos</h2>
 
           <div class="flex flex-col w-full justify-evenly">
             <div class="flex w-full flex-col lg:flex-row justify-around">
