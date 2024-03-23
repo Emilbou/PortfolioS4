@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-4">
+  <div class="bg-white p-10">
     <div v-if="Projetpagedata.length > 0">
       <h2 class="text-7xl font-bold" v-if="Projetpagedata[0].Projet">
         {{ Projetpagedata[0].Projet.nomprojet }}
@@ -12,19 +12,19 @@
         />
       </div>
     </div>
-    <div class="flex w-full gap-40">
-      <div class="w-1/2">
+    <div class="flex w-full justify-between">
+      <div class="w-1/3">
         <h2 class="text-4xl mb-10">Description</h2>
         <p class="text-balance">{{ Projetpagedata[0].Projet.descriptionprojet }}</p>
       </div>
-      <div class="flex flex-col">
-        <div>
+      <div class="flex flex-col justify-between w-1/2">
+        <div class="w-1/2">
           <h2 class="text-4xl mb-10">Technologies utilisées</h2>
           <div class="flex">
             <div
               v-for="Technodata of Projetpagedata"
               :key="Technodata.id_Techno"
-              class="flex flex-col"
+              class="flex flex-col justify-around"
             >
               <div v-if="Technodata.Technos">
                 <img
@@ -38,19 +38,42 @@
             </div>
           </div>
         </div>
+        <div v-if="Projetpagedata[0].Projet.scolaireprojet">
+          <h2 class="text-4xl font-normal">Projet réalisé dans le cadre des études</h2>
+        </div>
+        <div v-if="Projetpagedata[0].Projet.urlprojet">
+          <a :href="Projetpagedata[0].Projet.urlprojet" target="_blank">L'url en quesiton</a>
+        </div>
       </div>
+    </div>
+    <div class="w-full" v-if="Projetpagedata[0].Projet.apercuprojet">
+      <h2>Apercu du projet</h2>
+      <p>Cliquer sur l'image pour la développer</p>
+      <img
+        :src="Projetpagedata[0].Projet.apercuprojet"
+        class="rounded-xl w-full p-10 object-cover object-top transition-all"
+        :style="{ height: isExpanded ? 'auto' : '50vh' }"
+        alt="image représentative du projet"
+        @click="toggleExpand"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { supabase } from '@/supabase'
+import { supabase } from '../supabase'
+import { ref } from 'vue'
 const props = defineProps<{
   id_Projetprops: string
 }>()
+const isExpanded = ref(false)
 
 const { data: Projetpagedata, error } = await supabase
   .from('TechnosProjets')
   .select('id_Projet,Projet(*), id_Techno,Technos(*)')
   .eq('id_Projet', props.id_Projetprops)
+
+const toggleExpand = () => {
+  isExpanded.value = !isExpanded.value
+}
 </script>

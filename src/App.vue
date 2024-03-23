@@ -6,9 +6,9 @@ import { Suspense } from 'vue'
 </script>
 
 <template>
-  <main class=" bg-black">
+  <main class="bg-black">
     <suspense>
-    <RouterView />
- </suspense>
+      <RouterView />
+    </suspense>
   </main>
 </template>
