@@ -13,14 +13,14 @@
       </div>
     </div>
     <div class="flex w-full justify-between">
-      <div class="w-1/3">
+      <div class="w-1/3 border p-16 rounded-3xl">
         <h2 class="text-4xl mb-10">Description</h2>
         <p class="text-balance">{{ Projetpagedata[0].Projet.descriptionprojet }}</p>
       </div>
       <div class="flex flex-col justify-between w-1/2">
-        <div class="w-1/2">
+        <div class="w-fit border p-16 rounded-3xl">
           <h2 class="text-4xl mb-10">Technologies utilisées</h2>
-          <div class="flex">
+          <div class="flex gap-10">
             <div
               v-for="Technodata of Projetpagedata"
               :key="Technodata.id_Techno"
@@ -38,10 +38,10 @@
             </div>
           </div>
         </div>
-        <div v-if="Projetpagedata[0].Projet.scolaireprojet">
+        <div v-if="Projetpagedata[0].Projet.scolaireprojet" class="border p-16 rounded-3xl w-fit">
           <h2 class="text-4xl font-normal">Projet réalisé dans le cadre des études</h2>
         </div>
-        <div v-if="Projetpagedata[0].Projet.urlprojet">
+        <div v-if="Projetpagedata[0].Projet.urlprojet" class="border p-16 rounded-3xl">
           <a :href="Projetpagedata[0].Projet.urlprojet" target="_blank">L'url en quesiton</a>
         </div>
       </div>
