@@ -63,19 +63,6 @@ export default {
       <div class="flex flex-col z-10 relative justify-between h-full">
         <div class="w-full h-full flex justify-between items-start content-start flex-wrap">
           <div class="w-20 h-fit"><img src="/favicon.ico" alt="Logotype" /></div>
-          <nav class="h-fit">
-            <ul class="flex gap-20">
-              <li>
-                <router-link class="text-3xl" to="/">Accueil</router-link>
-              </li>
-              <li>
-                <router-link class="text-3xl" to="/">Projets</router-link>
-              </li>
-              <li>
-                <router-link class="text-3xl" to="/">A Propos</router-link>
-              </li>
-            </ul>
-          </nav>
         </div>
         <div class="flex w-full justify-between items-end">
           <div class="w-fit">

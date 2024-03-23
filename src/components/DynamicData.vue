@@ -12,15 +12,15 @@
         />
       </div>
     </div>
-    <div class="flex w-full justify-between">
-      <div class="w-1/3 border p-16 rounded-3xl">
+    <div class="flex lg:flex-row flex-col w-full justify-between">
+      <div class="w-full lg:w-1/2 border p-16 rounded-3xl">
         <h2 class="text-4xl mb-10">Description</h2>
         <p class="text-balance">{{ Projetpagedata[0].Projet.descriptionprojet }}</p>
       </div>
-      <div class="flex flex-col justify-between w-1/2">
-        <div class="w-fit border p-16 rounded-3xl">
+      <div class="flex flex-col justify-start w-full lg:w-1/2">
+        <div class="w-full border p-16 rounded-3xl">
           <h2 class="text-4xl mb-10">Technologies utilisées</h2>
-          <div class="flex gap-10">
+          <div class="flex gap-4 justify-around">
             <div
               v-for="Technodata of Projetpagedata"
               :key="Technodata.id_Techno"
@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div v-if="Projetpagedata[0].Projet.scolaireprojet" class="border p-16 rounded-3xl w-fit">
+        <div v-if="Projetpagedata[0].Projet.scolaireprojet" class="border p-16 rounded-3xl w-full">
           <h2 class="text-4xl font-normal">Projet réalisé dans le cadre des études</h2>
         </div>
         <div v-if="Projetpagedata[0].Projet.urlprojet" class="border p-16 rounded-3xl">
@@ -46,8 +46,8 @@
         </div>
       </div>
     </div>
-    <div class="w-full" v-if="Projetpagedata[0].Projet.apercuprojet">
-      <h2>Apercu du projet</h2>
+    <div class="w-full mt-10" v-if="Projetpagedata[0].Projet.apercuprojet">
+      <h2 class="text-4xl font-bold">Apercu du projet</h2>
       <p>Cliquer sur l'image pour la développer</p>
       <img
         :src="Projetpagedata[0].Projet.apercuprojet"
