@@ -47,7 +47,7 @@ export default {
           <SwiperHome />
           <div class="w-full justify-end flex p-4">
             <RouterLink
-              to="/projets"
+              to="/projet"
               class="border p-5 rounded-full hover:bg-red-600 transition-all hover:text-white"
             >
               Voir tous les projets

@@ -44,11 +44,6 @@ const copyEmail = () => {
               <li>
                 <RouterLink class="underline text-4xl font-light" to="/projet">Projets</RouterLink>
               </li>
-              <li>
-                <RouterLink class="underline text-4xl font-light whitespace-nowrap" to="/"
-                  >A propos</RouterLink
-                >
-              </li>
             </ul>
           </nav>
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { supabase } from '@/supabase'
+import FooterPortfolio from '../../components/FooterPortfolio.vue'
 const { data: projets, error } = await supabase
   .from('TechnosProjets')
   .select('id_Projet,Projet(*),id_Techno,Technos(*)')
@@ -21,6 +22,11 @@ projets.forEach((projet) => {
 </script>
 
 <template>
+  <div class="bg-white pt-10 flex justify-center">
+    <RouterLink class="bg-white border p-5 rounded-full" to="/"
+      ><img class="w-20" src="/public/favicon.ico" alt=""
+    /></RouterLink>
+  </div>
   <div class="bg-white">
     <div v-if="error">
       <p>Une erreur s'est produite : {{ error.message }}</p>
@@ -32,18 +38,18 @@ projets.forEach((projet) => {
       <div
         v-for="(projet, index) in projetsById.values()"
         :key="index"
-        class="flex flex-row items-end justify-center w-full my-10 p-10"
+        class="flex flex-col md:flex-row items-end justify-center w-full my-10 p-10"
         :class="{ 'flex-row-reverse': index % 2 !== 0 }"
       >
         <img
           :src="projet.imageprojet"
           :alt="projet.nomprojet"
-          class="w-2/5 rounded-lg object-cover aspect-video"
+          class="w-full md:w-2/5 rounded-lg object-cover aspect-video"
         />
-        <div class="w-1/2 px-8 flex flex-col">
-          <h2 class="text-2xl font-bold mb-4">{{ projet.nomprojet }}</h2>
+        <div class="w-full md:w-1/2 px-8 flex flex-col">
+          <h2 class="text-2xl font-bold mb-4 mt-10 md:mt-0">{{ projet.nomprojet }}</h2>
           <div>
-            <div class="flex gap-4 justify-around">
+            <div class="flex gap-4 py-10 justify-around">
               <div
                 v-for="Technodata in projet.Technos"
                 :key="Technodata.id_Techno"
@@ -66,4 +72,5 @@ projets.forEach((projet) => {
       </div>
     </div>
   </div>
+  <FooterPortfolio id="footergsap"></FooterPortfolio>
 </template>
