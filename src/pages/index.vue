@@ -45,8 +45,13 @@ export default {
         <div class="h-screenheight flex flex-col p-5 scroll-smooth">
           <h2 class="text-5xl mb-32 font-black">Mes Projets</h2>
           <SwiperHome />
-          <div class="w-full justify-end">
-            <RouterLink to="/projets"> Voir tous les projets </RouterLink>
+          <div class="w-full justify-end flex p-4">
+            <RouterLink
+              to="/projets"
+              class="border p-5 rounded-full hover:bg-red-600 transition-all hover:text-white"
+            >
+              Voir tous les projets
+            </RouterLink>
           </div>
         </div>
       </div>
