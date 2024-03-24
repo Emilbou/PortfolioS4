@@ -78,7 +78,7 @@ export default {
             </div>
             <div>
               <div class="w-3/4 xl:w-7/12">
-                <Intro :id_Intro="randomNumber" />
+                <Intro class="text-4xl text-pretty" :id_Intro="randomNumber" />
               </div>
             </div>
           </div>
