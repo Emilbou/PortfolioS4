@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import Arrow from './Arrow.vue'
+import Intro from './Intro.vue'
+
+function getRandomNumber(): number {
+  return Math.floor(Math.random() * 9 + 1)
+}
+const randomNumber = getRandomNumber()
+console.log(randomNumber)
 </script>
 <script lang="ts">
 import { TweenLite, gsap } from 'gsap/dist/gsap'
@@ -65,8 +72,15 @@ export default {
           <div class="w-20 h-fit"><img src="/favicon.ico" alt="Logotype" /></div>
         </div>
         <div class="flex w-full justify-between items-end">
-          <div class="w-fit">
-            <h1 class="text-8xl mb-5">Emilien Boucard</h1>
+          <div class="w-full flex flex-col">
+            <div class="w-fit">
+              <h1 class="text-8xl mb-5">Emilien Boucard</h1>
+            </div>
+            <div>
+              <div class="w-3/4 xl:w-7/12">
+                <Intro :id_Intro="randomNumber" />
+              </div>
+            </div>
           </div>
           <a
             class="actual hidden xl:block"
