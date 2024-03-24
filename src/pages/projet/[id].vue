@@ -24,6 +24,11 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div class="bg-white pt-10 flex justify-center">
+    <RouterLink class="bg-white border p-5 rounded-full" to="/"
+      ><img class="w-20" src="/public/favicon.ico" alt=""
+    /></RouterLink>
+  </div>
   <DynamicData :id_Projetprops="route.params.id" />
 
   <FooterPortfolio></FooterPortfolio>
