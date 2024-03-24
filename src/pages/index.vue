@@ -54,9 +54,11 @@ export default {
         <div>
           <h2 class="text-5xl mb-12 font-black">A propos</h2>
 
-          <div class="flex flex-col w-full justify-evenly">
-            <div class="flex w-full flex-col lg:flex-row justify-around">
-              <div class="w-full md:w-1/2 xl:w-1/3 flex justify-center my-24 relative">
+          <div class="flex flex-col w-full justify-evenly items-center">
+            <div
+              class="flex w-full flex-col lg:flex-row justify-center lg:justify-around items-center"
+            >
+              <div class="w-full md:w-1/2 xl:w-1/3 flex justify-center my-24 relative items-center">
                 <div
                   class="absolute w-44 aspect-square bg-red-600 rounded-full -top-12 -right-5"
                 ></div>

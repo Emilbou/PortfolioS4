@@ -87,7 +87,7 @@ export default {
             onclick="window.scrollTo({ top: document.getElementById('next').offsetTop, behavior: 'smooth' }); return false;"
           >
             <Arrow
-              class="bg-black p-1 rounded-full aspect-square w-fit h-auto pointer-events-auto"
+              class="bg-black hover:bg-red-600 transition-all p-1 rounded-full aspect-square w-fit h-auto pointer-events-auto"
             />
           </a>
         </div>
