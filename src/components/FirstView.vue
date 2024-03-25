@@ -77,7 +77,7 @@ export default {
               <h1 class="text-6xl md:text-8xl mb-5">Emilien Boucard</h1>
             </div>
             <div>
-              <div class="w-3/4 xl:w-7/12">
+              <div class="w-full md:w-3/4 xl:w-7/12">
                 <Intro class="text-4xl text-pretty" :id_Intro="randomNumber" />
               </div>
             </div>
