@@ -74,7 +74,7 @@ const copyEmail = () => {
 
         <div class="w-full lg:px-48">
           <div
-            class="w-full bg-white h-fit rounded-xl text-center text-3xl py-2 mt-12 lg:mt-0 border-black border lg:text-4xl lg:px-5"
+            class="w-full bg-white h-fit rounded-xl text-center text-2xl md:text-3xl py-2 mt-12 lg:mt-0 border-black border lg:text-4xl lg:px-5"
             @click="copyEmail"
           >
             emil.boucard@gmail.com
