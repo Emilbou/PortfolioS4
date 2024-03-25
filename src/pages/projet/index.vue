@@ -1,76 +1,43 @@
 <script setup lang="ts">
 import { supabase } from '@/supabase'
+import ListeTechnos from '@/components/ListeTechnos.vue'
 import FooterPortfolio from '../../components/FooterPortfolio.vue'
-const { data: projets, error } = await supabase
-  .from('TechnosProjets')
-  .select('id_Projet,Projet(*),id_Techno,Technos(*)')
-
-// Regrouper les technologies par projet
-const projetsById = new Map()
-projets.forEach((projet) => {
-  const projetId = projet.id_Projet
-  if (!projetsById.has(projetId)) {
-    projetsById.set(projetId, {
-      ...projet.Projet,
-      Technos: []
-    })
-  }
-  if (projet.Technos) {
-    projetsById.get(projetId).Technos.push(projet.Technos)
-  }
-})
+// @ts-ignore
+const { data: projets, error } = await supabase.from('Projet').select('*')
 </script>
-
 <template>
-  <div class="bg-white pt-10 flex justify-center">
-    <RouterLink class="bg-white border p-5 rounded-full" to="/"
-      ><img class="w-20" src="/public/favicon.ico" alt=""
-    /></RouterLink>
-  </div>
   <div class="bg-white">
-    <div v-if="error">
-      <p>Une erreur s'est produite : {{ error.message }}</p>
+    <div class="bg-white pt-10 flex justify-center">
+      <RouterLink class="bg-white border p-5 rounded-full flex-col md:flex-row" to="/"
+        ><img class="w-20" src="/public/favicon.ico" alt="" />
+      </RouterLink>
     </div>
-    <div v-else-if="!projets">
-      <p>Chargement...</p>
-    </div>
-    <div v-else class="flex flex-col items-center">
-      <div
-        v-for="(projet, index) in projetsById.values()"
-        :key="index"
-        class="flex flex-col md:flex-row items-end justify-center w-full my-10 p-10"
-        :class="{ 'flex-row-reverse': index % 2 !== 0 }"
+
+    <div
+      v-for="(unseulprojet, index) in projets"
+      :key="index"
+      class="flex bg-white items-end justify-center w-full my-10 p-10"
+    >
+      <RouterLink
+        :to="{
+          name: '/projet/[id]',
+          params: { id: unseulprojet.id }
+        }"
+        class="flex justify-center flex-col md:flex-row"
       >
         <img
-          :src="projet.imageprojet"
-          :alt="projet.nomprojet"
+          :src="unseulprojet.imageprojet ?? ''"
+          :alt="unseulprojet.nom_projet"
           class="w-full md:w-2/5 rounded-lg object-cover aspect-video"
         />
-        <div class="w-full md:w-1/2 px-8 flex flex-col">
-          <h2 class="text-2xl font-bold mb-4 mt-10 md:mt-0">{{ projet.nomprojet }}</h2>
-          <div>
-            <div class="flex gap-4 py-10 justify-around">
-              <div
-                v-for="Technodata in projet.Technos"
-                :key="Technodata.id_Techno"
-                class="flex flex-col justify-around"
-              >
-                <div v-if="Technodata">
-                  <img
-                    class="aspect-square w-20"
-                    :src="Technodata.icone_techno"
-                    :title="Technodata.nom_techno"
-                    alt=""
-                  />
-                </div>
-                <h3 v-else>Techno non spécifiée</h3>
-              </div>
-            </div>
-          </div>
+        <div class="w-full md:w-1/2 px-8 flex flex-col justify-end">
+          <h2 class="text-2xl font-bold mb-4 mt-10 md:mt-0">{{ unseulprojet.nomprojet }}</h2>
+
+          <ListeTechnos :id_Projetprops="unseulprojet.id" />
           <hr />
         </div>
-      </div>
+      </RouterLink>
     </div>
   </div>
-  <FooterPortfolio id="footergsap"></FooterPortfolio>
+  <FooterPortfolio></FooterPortfolio>
 </template>
