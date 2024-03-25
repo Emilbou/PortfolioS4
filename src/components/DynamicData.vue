@@ -13,12 +13,12 @@
       </div>
     </div>
     <div class="flex lg:flex-row flex-col w-full justify-between">
-      <div class="w-full lg:w-1/2 border p-7 lg:p-16 rounded-3xl">
+      <div class="w-full lg:w-1/2 border py-5 p-7 lg:p-16 rounded-3xl">
         <h2 class="text-4xl mb-10">Description</h2>
         <p class="text-balance">{{ Projetpagedata[0].Projet.descriptionprojet }}</p>
       </div>
       <div class="flex flex-col justify-start w-full lg:w-1/2">
-        <div class="w-full border p-7 lg:p-16 rounded-3xl">
+        <div class="w-full border py-5 p-7 lg:p-16 rounded-3xl">
           <h2 class="text-4xl mb-10">Technologies utilisées</h2>
           <div class="flex gap-4 justify-around">
             <div
@@ -40,13 +40,13 @@
         </div>
         <div
           v-if="Projetpagedata[0].Projet.scolaireprojet"
-          class="border p-7 lg:p-16 rounded-3xl w-full"
+          class="border py-5 p-7 lg:p-16 rounded-3xl w-full"
         >
           <h2 class="text-4xl font-normal">Projet réalisé dans le cadre des études</h2>
         </div>
         <div
           v-if="Projetpagedata[0].Projet.urlprojet"
-          class="border p-7 lg:p-16 rounded-3xl text-center"
+          class="border py-5 p-7 lg:p-16 rounded-3xl text-center"
         >
           <a :href="Projetpagedata[0].Projet.urlprojet" target="_blank" class="text-4xl text-center"
             >Url du site</a
