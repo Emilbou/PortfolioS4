@@ -74,7 +74,7 @@ export default {
         <div class="flex w-full justify-between items-end">
           <div class="w-full flex flex-col">
             <div class="w-fit">
-              <h1 class="text-8xl mb-5">Emilien Boucard</h1>
+              <h1 class="text-6xl md:text-8xl mb-5">Emilien Boucard</h1>
             </div>
             <div>
               <div class="w-3/4 xl:w-7/12">
