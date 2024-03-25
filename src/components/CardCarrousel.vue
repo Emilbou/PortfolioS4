@@ -21,6 +21,4 @@ const { data: Projetdata, error } = await supabase
   .select('*')
   .eq('id', props.id_Projet)
   .single()
-console.log(Projetdata)
-console.log(error)
 </script>

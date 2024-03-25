@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import SwiperHome from '../components/SwiperHome.vue'
-import CardScroll from '../components/CardScroll.vue'
-import CardCarrousel from '../components/CardCarrousel.vue'
 import FirstView from '../components/FirstView.vue'
 import FooterPortfolio from '../components/FooterPortfolio.vue'
+import technosaccueil from '../components/technosaccueil.vue'
 </script>
 <script lang="ts">
 import { gsap } from 'gsap/dist/gsap'
@@ -17,7 +16,7 @@ export default {
       scrollTrigger: {
         trigger: '#footergsap',
         end: 'bottom',
-        start: 'top+=200px bottom',
+        start: 'top+=350px bottom',
         toggleActions: 'play reverse play reverse',
         markers: false
       }
@@ -97,10 +96,10 @@ export default {
           </div>
         </div>
       </div>
-
-      <CardScroll />
-
-      <div></div>
+      <div class="p-4">
+        <h2 class="text-5xl mb-32 font-black mt-20">Mes Compétences</h2>
+        <technosaccueil></technosaccueil>
+      </div>
     </div>
   </div>
   <FooterPortfolio id="footergsap"></FooterPortfolio>
