@@ -41,8 +41,10 @@
         <div v-if="Projetpagedata[0].Projet.scolaireprojet" class="border p-16 rounded-3xl w-full">
           <h2 class="text-4xl font-normal">Projet réalisé dans le cadre des études</h2>
         </div>
-        <div v-if="Projetpagedata[0].Projet.urlprojet" class="border p-16 rounded-3xl">
-          <a :href="Projetpagedata[0].Projet.urlprojet" target="_blank">L'url en quesiton</a>
+        <div v-if="Projetpagedata[0].Projet.urlprojet" class="border p-16 rounded-3xl text-center">
+          <a :href="Projetpagedata[0].Projet.urlprojet" target="_blank" class="text-4xl text-center"
+            >Url du site</a
+          >
         </div>
       </div>
     </div>
